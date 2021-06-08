@@ -30,27 +30,35 @@ body {
 
 /* MENU FIXED STICKY ================================ */
 header {
-  position: fixed;
-  top: 0;
+  position: absolute;
   left: 0;
+  top: 0;
+  z-index: 100;
+
   width: 100%;
+  padding: calc(var(--size-base) * 5) calc(var(--size-base) * 8);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   transition-property: background, padding, height;
   transition-duration: 0.6s;
-
-  padding: calc(var(--size-base) * 5) calc(var(--size-base) * 13);
-  z-index: 1000;
 }
 
-header.sticky {
-  padding: calc(var(--size-base) / 2) calc(var(--size-base) * 13);
-  background: hsl(var(--text-color) / 90%);
-}
+@media (min-width: 768px) {
+  header {
+    position: fixed;
+  }
 
-header.sticky a {
-  color: hsl(var(--bg-color));
+  header.sticky {
+    padding: calc(var(--size-base) / 2) calc(var(--size-base) * 8);
+    background: hsl(var(--text-color) / 90%);
+  }
+
+  header.sticky a {
+    color: hsl(var(--bg-color));
+  }
 }
 
 header .logo {
@@ -77,6 +85,88 @@ header ul li a {
 
 header ul li a:hover {
   color: hsl(var(--text-color) / 60%);
+}
+
+/* Menu Mobile ============================ */
+.mobile-menu {
+  display: none;
+
+  background: transparent;
+  border: 0;
+}
+
+.mobile-menu span {
+  display: block;
+  margin-bottom: var(--size-base);
+  border-top: 2px solid hsl(var(--text-color) / 90%);
+  width: calc(var(--size-base) * 5);
+
+  transition: 0.2s;
+}
+
+@media (max-width: 768px) {
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  header {
+    padding: calc(var(--size-base) * 3);
+  }
+
+  .mobile-menu {
+    display: block;
+    position: relative;
+    z-index: 1000;
+  }
+
+  header nav.active {
+    display: grid;
+    place-items: center;
+  }
+
+  header nav ul {
+    display: none;
+  }
+
+  header nav.active ul {
+    display: block;
+  }
+
+  header nav.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100%;
+
+    background: hsl(0 0% 0% / 80%);
+
+    text-align: center;
+
+    overflow-y: auto;
+  }
+
+  header nav.active ul li + li {
+    margin-top: calc(var(--size-base) * 8);
+  }
+
+  header nav.active ul li a {
+    font-size: 200%;
+    color: hsl(var(--text-color) / 90%);
+  }
+
+  header nav.active + .mobile-menu span:nth-child(1) {
+    display: none;
+  }
+
+  header nav.active + .mobile-menu span:nth-child(2) {
+    transform: rotate(45deg) translateY(350%) scale(0.8);
+  }
+
+  header nav.active + .mobile-menu span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-350%) scale(0.8);
+  }
 }
 
 /* HERO =================================== */
