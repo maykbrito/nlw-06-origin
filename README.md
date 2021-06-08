@@ -2,5 +2,8 @@
 
 ## Features
 
-- [ ] Menu fixed
-  - [ ] 🍅 14:43 - 15h30
+- [x] Menu fixed (sticky)
+  - [x] 🍅 14:43 - 15h30
+  - [x] 🍅 15:43 - 15h47
+- [x] Mobile menu
+  - [x] 🍅 15:52...
