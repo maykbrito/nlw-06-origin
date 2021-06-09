@@ -1,33 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
   <head>
+    <!-- Page Information
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="/style.css" />
-    <script src="./main.js" type="module" async></script>
+
+    <!-- SCRIPT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script src="./main.js" type="module" defer></script>
   </head>
   <body>
-    <!-- Menu Fixed - Sticky -->
+    <div id="top"></div>
+
+    <!-- Header Menu Sticky
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <header>
-      <a class="logo" href="#">Logo</a>
+      <a class="logo" href="#top">Logo</a>
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="#top">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <button class="mobile-menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </header>
-    <section class="banner hero"></section>
+
+    <!-- Section Hero
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="banner hero">
+      <h1>Our company</h1>
+      <p>will help you!</p>
+    </section>
+
+    <!-- Section About
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="about">
+      <h2>About</h2>
+    </section>
+
+    <!-- Section Services
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="services">
+      <h2>Services</h2>
+    </section>
+
+    <!-- Section Testimonial
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="testimonial">
+      <h2>Testimonial</h2>
+    </section>
+
+    <!-- Section Contact
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="contact">
+      <h2>Contact</h2>
+    </section>
+
+    <!-- Back to top -->
+    <button id="back-to-top">Voltar ao top</button>
   </body>
 </html>

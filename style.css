@@ -3,13 +3,19 @@
 
 :root {
   /** colors */
-  --primary: 10;
-  --secondary: 60;
-  --bg-color: 0 0% 0%;
-  --text-color: 0 0% 100%;
+  --primary: 290;
+  --dark: 95%;
+  --light: 15%;
+
+  --bg-color: var(--primary) 80% var(--light);
+  --text-color: var(--primary) 70% var(--dark);
 
   /** sizes */
   --size-base: 0.5rem;
+
+  /** hero */
+  --hero-bg-overlay: hsl(0 0% 0% / 40%);
+  --hero-font-size: calc(var(--size-base) * 8);
 }
 
 /* RESET ================================ */
@@ -46,6 +52,7 @@ header {
   transition-duration: 0.6s;
 }
 
+/** sticky only in desktop */
 @media (min-width: 768px) {
   header {
     position: fixed;
@@ -53,11 +60,16 @@ header {
 
   header.sticky {
     padding: calc(var(--size-base) / 2) calc(var(--size-base) * 8);
-    background: hsl(var(--text-color) / 90%);
+    background: hsl(var(--primary) 60% 30% / 90%);
   }
 
   header.sticky a {
-    color: hsl(var(--bg-color));
+    color: hsl(var(--bg-color) / 80%);
+  }
+
+  header.sticky ul li a:hover {
+    font-weight: bold;
+    color: hsl(var(--bg-color) / 100%);
   }
 }
 
@@ -171,7 +183,114 @@ header ul li a:hover {
 
 /* HERO =================================== */
 .banner {
+  /* box */
   width: 100%;
   height: 100vh;
   background: hsl(308, 96%, 9%);
+  /** pizza 
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  */
+
+  /** hairdresser 
+  background-image: url('https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80');
+  */
+
+  /** law firm
+  */
+  background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+
+  background-position: center;
+  background-size: cover;
+
+  /*content*/
+  font-size: var(--hero-font-size);
+  color: hsl(var(--primary), 60%, var(--dark));
+
+  /** content center (auto) 
+  display: grid;
+  place-content: center;
+  */
+
+  /** content from top */
+  padding-top: 40rem;
+
+  /** content left 
+  padding-left: 4rem;
+  */
+
+  /** content right 
+  */
+  text-align: right;
+  padding-right: 4rem;
+}
+
+.banner::before {
+  /* box */
+  width: 100%;
+  height: 100%;
+  background: var(--hero-bg-overlay);
+
+  /* content */
+  content: ' ';
+
+  /* position */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner h1 {
+  /* position */
+  position: relative;
+  z-index: 1;
+
+  /* content */
+  font-size: 1.2em;
+}
+
+.banner p {
+  letter-spacing: 0.1rem;
+  font-size: 0.5em;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+/* ABOUT =================================== */
+#about {
+  background: hsl(50, 100%, 60%);
+  min-height: 100vh;
+}
+
+/* SERVICES =================================== */
+#services {
+  background: hsl(100, 100%, 60%);
+  min-height: 100vh;
+}
+
+/* Testimonial =================================== */
+#testimonial {
+  background: hsl(150, 100%, 60%);
+  min-height: 100vh;
+}
+
+/* Contact =================================== */
+#contact {
+  background: hsl(250, 100%, 60%);
+  min-height: 100vh;
+}
+
+/* Back to top button ======================== */
+#back-to-top {
+  position: fixed;
+  bottom: -2rem;
+  right: 2rem;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s;
+}
+
+#back-to-top.show {
+  bottom: 2rem;
+  visibility: visible;
+  opacity: 1;
 }
