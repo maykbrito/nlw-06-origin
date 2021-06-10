@@ -19,21 +19,21 @@ img {
 }
 /*==================== VARIABLES CSS ====================*/
 :root {
-  --header-height: ;
+  --header-height: 3rem;
 
   /*========== Colors ==========*/
   /* Choose your prefered color */
-  --hue: ; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --hue: 0; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
-  --base-color: hsl(var(var(--hue)) 69% 61%);
-  --base-color-second: hsl(var(var(--hue)) 69% 61%);
-  --base-color-alt: hsl(var(var(--hue)) 57% 53%);
-  --base-color-lighter: hsl(var(var(--hue)) 92% 85%);
-  --title-color: hsl(var(var(--hue)) 8% 15%);
-  --text-color: hsl(var(var(--hue)) 8% 45%);
-  --text-color-light: hsl(var(var(--hue)) 8% 65%);
-  --body-color: hsl(var(var(--hue)) 60% 99%);
+  --base-color: hsl(var(--hue) 69% 61%);
+  --base-color-second: hsl(var(--hue) 69% 61%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --base-color-lighter: hsl(var(--hue) 92% 85%);
+  --title-color: hsl(var(--hue) 8% 15%);
+  --text-color: hsl(var(--hue) 8% 45%);
+  --text-color-light: hsl(var(--hue) 8% 65%);
+  --body-color: hsl(var(--hue) 60% 99%);
   --container-color: #fff;
 
   /*========== Font & typography ==========*/
@@ -100,6 +100,7 @@ h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
+
 /*==================== REUSABLE CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
@@ -129,11 +130,99 @@ h4 {
 
 .grid {
   display: grid;
-  gap: 1.5;
+  gap: 1.5rem;
 }
+
+header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
 /*==================== NAV ====================*/
+nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo,
+nav .open {
+  color: var(--title-color);
+}
+
+nav .logo:hover {
+  color: var(--base-color);
+}
+
+nav .open {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+nav .open:hover {
+  color: var(--base-color);
+}
+
+.menu {
+  position: fixed;
+  /** show-hide menu
+  bottom: 0; 
+  */
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  padding: 2rem 1.5rem 4rem;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 1.5rem 1.5rem 0 0;
+  transition: 0.3s;
+}
+
+ul.grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+ul.grid li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul.grid li a:hover {
+  color: var(--base-color);
+}
+
+li a i {
+  font-size: 1.2rem;
+}
+
+nav i.close {
+  position: absolute;
+  right: 1.3rem;
+  bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--base-color);
+}
+
+nav i.close:hover {
+  color: var(--base-color-alt);
+}
 
 /* show menu */
+.show-menu {
+  bottom: 0;
+}
 
 /* Active link */
 
@@ -164,4 +253,4 @@ h4 {
 
 /* For medium devices */
 
-/* For large devices */
+/* For large devices */ ;
