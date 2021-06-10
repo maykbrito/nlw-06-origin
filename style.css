@@ -2,20 +2,21 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
 :root {
-  /** colors */
-  --primary: 290;
-  --dark: 95%;
-  --light: 15%;
+  /** colors https://www.w3schools.com/colors/colors_hsl.asp*/
+  --primary: 280;
 
-  --bg-color: var(--primary) 80% var(--light);
-  --text-color: var(--primary) 70% var(--dark);
+  --bg-color: var(--primary) 100% 50%;
+  --text-color: 0 0% 100%; /* 0 0% 100% = white | 0 0% 0% = black */
+  --text-inside-primary: 0 0% 100%;
 
   /** sizes */
   --size-base: 0.5rem;
 
   /** hero */
-  --hero-bg-overlay: hsl(0 0% 0% / 40%);
+  --hero-bg-overlay: hsl(var(--primary) 10% 0% / 50%);
+  --hero-blend-mode: hsl; /* color, hsl, multiply, overlay, darken, */
   --hero-font-size: calc(var(--size-base) * 8);
+  --hero-text-color: hsl(var(--text-color));
 }
 
 /* RESET ================================ */
@@ -30,8 +31,21 @@
 
 /* BASIC ================================ */
 body {
-  background: hsl(var(--bg-color));
-  min-height: 200vh; /* to view menu moving */
+  min-height: 100vh; /* to view menu moving */
+}
+
+.sr-only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border-width: 0;
+  white-space: nowrap;
 }
 
 /* MENU FIXED STICKY ================================ */
@@ -60,15 +74,31 @@ header {
 
   header.sticky {
     padding: calc(var(--size-base) / 2) calc(var(--size-base) * 8);
-    background: hsl(var(--primary) 60% 30% / 90%);
+    box-shadow: 0 0.2rem 0.8rem -0.2rem hsl(0 0% 0% / 5%);
+
+    /** with primary bg color
+      background: hsl(var(--bg-color) / 90%);
+    */
+    background: white;
   }
 
   header.sticky a {
-    color: hsl(var(--bg-color) / 80%);
+    /** when primary bg color
+    color: hsl(var(--text-inside-primary) / 95%);
+    */
+    color: hsl(0 0% 0% / 90%);
+
+    transition: 0.2s;
   }
 
   header.sticky ul li a:hover {
-    font-weight: bold;
+    /** when primary bg color
+    color: hsl(var(--text-inside-primary) / 100%);
+    */
+    color: hsl(var(--bg-color) / 100%);
+  }
+
+  header.sticky ul li a.active {
     color: hsl(var(--bg-color) / 100%);
   }
 }
@@ -89,10 +119,14 @@ header ul {
 }
 
 header ul li a {
-  margin: 0 var(--size-base);
-  color: hsl(var(--text-color) / 80%);
-  letter-spacing: 0.1rem;
+  color: hsl(var(--text-color) / 90%);
+  letter-spacing: -0.01rem;
   font-weight: 500;
+  transition: 0.2s;
+}
+
+header ul li + li {
+  margin-left: calc(var(--size-base) * 3);
 }
 
 header ul li a:hover {
@@ -152,7 +186,7 @@ header ul li a:hover {
     height: 100vh;
     width: 100%;
 
-    background: hsl(0 0% 0% / 80%);
+    background: hsl(0 0% 0% / 93%);
 
     text-align: center;
 
@@ -188,47 +222,56 @@ header ul li a:hover {
   height: 100vh;
   background: hsl(308, 96%, 9%);
   /** pizza 
-  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
   */
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
 
   /** hairdresser 
   background-image: url('https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80');
   */
 
   /** law firm
-  */
   background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  */
+
+  background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
 
   background-position: center;
   background-size: cover;
 
   /*content*/
   font-size: var(--hero-font-size);
-  color: hsl(var(--primary), 60%, var(--dark));
+  color: var(--hero-text-color);
 
   /** content center (auto) 
   display: grid;
   place-content: center;
   */
 
-  /** content from top */
-  padding-top: 40rem;
+  /** content center (y) 
+  */
+  display: flex;
+  align-items: center;
+
+  /** content from top 
+  padding-top: 22rem;
+  */
 
   /** content left 
-  padding-left: 4rem;
   */
+  padding-left: 4rem;
 
   /** content right 
-  */
-  text-align: right;
   padding-right: 4rem;
+  text-align: right;
+  */
 }
 
-.banner::before {
+.banner .overlay {
   /* box */
   width: 100%;
   height: 100%;
   background: var(--hero-bg-overlay);
+  mix-blend-mode: var(--hero-blend-mode);
 
   /* content */
   content: ' ';
@@ -237,23 +280,70 @@ header ul li a:hover {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 0;
+}
+
+.banner .content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1,
+.banner h2 {
+  /* content */
+  line-height: 1em;
 }
 
 .banner h1 {
-  /* position */
-  position: relative;
-  z-index: 1;
-
-  /* content */
   font-size: 1.2em;
 }
 
-.banner p {
-  letter-spacing: 0.1rem;
-  font-size: 0.5em;
-  opacity: 0.8;
-  text-transform: uppercase;
+.banner h2 {
+  font-size: 1em;
 }
+
+.banner p {
+  margin: calc(var(--size-base) * 4) 0;
+  letter-spacing: 0.1rem;
+  font-size: 0.3em;
+  opacity: 0.9;
+
+  max-width: 50rem;
+}
+
+.banner a {
+  /*box*/
+  background: hsl(var(--bg-color) / 100%);
+  padding: calc(var(--size-base) * 1.5);
+  width: calc(var(--size-base) * 22);
+  border-radius: var(--size-base);
+
+  /* content */
+  display: grid;
+  place-items: center;
+  color: hsl(var(--text-inside-primary) / 95%);
+  font-size: 0.3em;
+
+  /* features */
+  transition: 0.5s;
+}
+
+.banner a:hover {
+  background: hsl(var(--bg-color) / 70%);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .banner {
+    font-size: calc(var(--hero-font-size) / 1.5);
+    padding: 15rem 2rem;
+  }
+
+  .banner a {
+    width: 100%;
+  }
+}
+
 /* ABOUT =================================== */
 #about {
   background: hsl(50, 100%, 60%);
@@ -268,14 +358,85 @@ header ul li a:hover {
 
 /* Testimonial =================================== */
 #testimonial {
-  background: hsl(150, 100%, 60%);
-  min-height: 100vh;
+  background: hsl(220, 20%, 97%);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#testimonial .content {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#testimonial img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#testimonial .testimonials {
+  max-width: 30rem;
+  align-self: center;
+}
+
+#testimonial .testimonials .item {
+  cursor: grab;
+}
+
+blockquote {
+  line-height: 1.7;
+  font-weight: 500;
+  padding: calc(var(--size-base) * 7);
+  text-align: center;
+  font-size: calc(var(--size-base) * 2);
+  position: relative;
+}
+
+blockquote::before {
+  content: '\201D';
+  font-family: serif;
+  font-size: 6.5rem;
+  line-height: 1;
+  font-weight: normal;
+  opacity: 0.3;
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Contact =================================== */
 #contact {
   background: hsl(250, 100%, 60%);
   min-height: 100vh;
+}
+
+/* Slider =================================== */
+.tns-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tns-nav button {
+  border: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: black;
+  opacity: 0.3;
+}
+
+.tns-nav button.tns-nav-active {
+  border: 2px solid black;
+  background: transparent;
+  transform: scale(1.2);
+  opacity: 1;
 }
 
 /* Back to top button ======================== */

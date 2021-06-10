@@ -13,21 +13,23 @@
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
+    />
 
     <!-- SCRIPT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="./main.js" type="module" defer></script>
   </head>
   <body>
-    <div id="top"></div>
-
     <!-- Header Menu Sticky
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <header>
       <a class="logo" href="#top">Logo</a>
       <nav>
         <ul>
-          <li><a href="#top">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonial">Testimonial</a></li>
@@ -44,9 +46,20 @@
 
     <!-- Section Hero
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <section class="banner hero">
-      <h1>Our company</h1>
-      <p>will help you!</p>
+    <section id="home" class="banner hero">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>NEVER STOP</h1>
+        <h2>LEARNING</h2>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque est
+          nihil architecto quos inventore provident consequuntur doloribus
+          dignissimos repellendus error illum officia nam quas possimus
+          blanditiis facere, doloremque rerum labore?
+        </p>
+
+        <a href="#about">Saiba mais</a>
+      </div>
     </section>
 
     <!-- Section About
@@ -64,7 +77,51 @@
     <!-- Section Testimonial
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <section id="testimonial">
-      <h2>Testimonial</h2>
+      <h2 class="sr-only">Testimonial</h2>
+
+      <div class="content">
+        <div class="testimonials">
+          <div class="my-testimonials">
+            <div class="item">
+              <blockquote>
+                <p>
+                  “Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                  dolor auctor. Vestibulum ligula porta felis euismod semper.
+                  Cras justo odio consectetur.”
+                </p>
+                <h5>Nikolas Brooten</h5>
+                <p>Sales Manager</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>
+                  “Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                  dolor auctor. Vestibulum ligula porta felis euismod semper.
+                  Cras justo odio consectetur.”
+                </p>
+                <h5>Brooten Nik</h5>
+                <p>CTO</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>
+                  “Vivamus sagittis lacus vel augue laoreet rutrum faucibus
+                  dolor auctor. Vestibulum ligula porta felis euismod semper.
+                  Cras justo odio consectetur.”
+                </p>
+                <h5>Bokolas Northen</h5>
+                <p>Manager</p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHBpenphfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt=""
+        />
+      </div>
     </section>
 
     <!-- Section Contact
@@ -75,5 +132,7 @@
 
     <!-- Back to top -->
     <button id="back-to-top">Voltar ao top</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
   </body>
 </html>
