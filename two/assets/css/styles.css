@@ -1,81 +1,136 @@
 /*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 /*==================== RESET ====================*/
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: ;
 
   /*========== Colors ==========*/
   /* Choose your prefered color */
-  --hue-color: ; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  --hue: ; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
-  --first-color: ;
-  --first-color-second: ;
-  --first-color-alt: ;
-  --first-color-lighter: ;
-  --title-color: ;
-  --text-color: ;
-  --text-color-light: ;
-  --input-color: ;
-  --body-color: ;
-  --container-color: ;
+  --base-color: hsl(var(var(--hue)) 69% 61%);
+  --base-color-second: hsl(var(var(--hue)) 69% 61%);
+  --base-color-alt: hsl(var(var(--hue)) 57% 53%);
+  --base-color-lighter: hsl(var(var(--hue)) 92% 85%);
+  --title-color: hsl(var(var(--hue)) 8% 15%);
+  --text-color: hsl(var(var(--hue)) 8% 45%);
+  --text-color-light: hsl(var(var(--hue)) 8% 65%);
+  --body-color: hsl(var(var(--hue)) 60% 99%);
+  --container-color: #fff;
 
   /*========== Font & typography ==========*/
-  --body-font: ;
+  --body-font: 'Poppins', sans-serif;
 
-  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-  --big-font-size: ;
-  --h1-font-size: ;
-  --h2-font-size: ;
-  --h3-font-size: ;
-  --normal-font-size: ;
-  --small-font-size: ;
-  --smaller-font-size: ;
+  /* .5rem = 8px, 1rem = 16px */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
-  --font-medium: ;
-  --font-semi-bold: ;
+  --font-medium: 500;
+  --font-semi-bold: 600;
 
   /*========== Margins ==========*/
   /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-  --m-0-25: ;
-  --m-0-5: ;
-  --m-0-75: ;
-  --m-1: ;
-  --m-1-5: ;
-  --m-2: ;
-  --m-2-5: ;
-  --m-3: ;
+  --m-0-25: 0.25rem;
+  --m-0-5: 0.5rem;
+  --m-0-75: 0.75rem;
+  --m-1: 1rem;
+  --m-1-5: 1.5rem;
+  --m-2: 2rem;
+  --m-2-5: 1.5rem;
+  --m-3: 3rem;
 
   /*========== z index ==========*/
-  --z-tooltip: ;
-  --z-fixed: ;
-  --z-modal: ;
+  --z-fixed: 100;
+  --z-modal: 1000;
 }
 
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
-    --big-font-size: ;
-    --h1-font-size: ;
-    --h2-font-size: ;
-    --h3-font-size: ;
-    --normal-font-size: ;
-    --small-font-size: ;
-    --smaller-font-size: ;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
 /*==================== BASE ====================*/
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
 /*==================== REUSABLE CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+}
+.section .title {
+  font-size: var(--h1-font-size);
+}
+
+.section .subtitle {
+  font-size: var(--smaller-font-size);
+  margin-bottom: var(--m-3);
+}
+
+.section .title,
+.section .subtitle {
+  text-align: center;
+}
 
 /*==================== BUTTONS ====================*/
 
 /*==================== LAYOUT ====================*/
+.container {
+  max-width: 768px;
+  margin-left: var(--m-1-5);
+  margin-right: var(--m-1-5);
+}
 
+.grid {
+  display: grid;
+  gap: 1.5;
+}
 /*==================== NAV ====================*/
 
 /* show menu */
