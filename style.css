@@ -216,7 +216,7 @@ header ul li a:hover {
 }
 
 /* HERO =================================== */
-.banner {
+.hero {
   /* box */
   width: 100%;
   height: 100vh;
@@ -266,7 +266,7 @@ header ul li a:hover {
   */
 }
 
-.banner .overlay {
+.hero .overlay {
   /* box */
   width: 100%;
   height: 100%;
@@ -283,26 +283,26 @@ header ul li a:hover {
   z-index: 0;
 }
 
-.banner .content {
+.hero .content {
   position: relative;
   z-index: 1;
 }
 
-.banner h1,
-.banner h2 {
+.hero h1,
+.hero h2 {
   /* content */
   line-height: 1em;
 }
 
-.banner h1 {
+.hero h1 {
   font-size: 1.2em;
 }
 
-.banner h2 {
+.hero h2 {
   font-size: 1em;
 }
 
-.banner p {
+.hero p {
   margin: calc(var(--size-base) * 4) 0;
   letter-spacing: 0.1rem;
   font-size: 0.3em;
@@ -311,7 +311,7 @@ header ul li a:hover {
   max-width: 50rem;
 }
 
-.banner a {
+.hero a {
   /*box*/
   background: hsl(var(--bg-color) / 100%);
   padding: calc(var(--size-base) * 1.5);
@@ -319,41 +319,53 @@ header ul li a:hover {
   border-radius: var(--size-base);
 
   /* content */
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: hsl(var(--text-inside-primary) / 95%);
-  font-size: 0.3em;
+  font-size: 0.25em;
 
   /* features */
   transition: 0.5s;
 }
 
-.banner a:hover {
+.hero a i {
+  font-size: 1.5rem;
+  margin-left: var(--size-base);
+}
+
+.hero a:hover {
   background: hsl(var(--bg-color) / 70%);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-  .banner {
-    font-size: calc(var(--hero-font-size) / 1.5);
+  .hero {
+    font-size: calc(var(--hero-font-size) / 1.8);
     padding: 15rem 2rem;
   }
 
-  .banner a {
-    width: 100%;
+  .hero a {
+    font-size: 0.4em;
   }
 }
 
 /* ABOUT =================================== */
 #about {
-  background: hsl(50, 100%, 60%);
+  background: hsl(49, 100%, 89%);
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
 }
 
 /* SERVICES =================================== */
 #services {
-  background: hsl(100, 100%, 60%);
+  background: hsl(101, 100%, 92%);
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
 }
 
 /* Testimonial =================================== */
@@ -412,8 +424,14 @@ blockquote::before {
 
 /* Contact =================================== */
 #contact {
-  background: hsl(250, 100%, 60%);
+  background: url(https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
 }
 
 /* Slider =================================== */
@@ -448,6 +466,14 @@ blockquote::before {
   opacity: 0;
   visibility: hidden;
   transition: 0.6s;
+
+  background: none;
+  border: none;
+
+  font-size: 3rem;
+  color: hsl(var(--primary) 100% 50%);
+
+  cursor: pointer;
 }
 
 #back-to-top.show {
