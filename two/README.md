@@ -31,8 +31,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Bibliotecas
 
+- [Google Fonts](https://fonts.google.com/)
 - [SwipeJS](https://github.com/nolimits4web/Swiper)
-- [Unicons](https://iconscout.com/unicons/explore/line)
+- [Unicons](https://iconscout.com/unicons/)
 
 ## 💻 Projeto
 
