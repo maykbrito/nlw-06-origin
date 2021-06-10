@@ -1,8 +1,8 @@
 * HOME
 home__social
 https://www.linkedin.com/
-https://dribbble.com/
-https://github.com/
+https://twitter.com/
+https://facebook.com/
 
 home__description
 High level experience in web design and development knowledge, producing quality work.
@@ -24,16 +24,6 @@ I develop the user interface.
 Web page development.
 I create ux element interactions.
 I position your company brand.
-
-
-* PORTFOLIO
-portfolio__description
-Website adaptable to all devices, with ui components and animated interactions.
-
-
-* PROJECT
-project__description
-Contact me now and get a 30% discount on your new project.
 
 
 * TESTIMONIAL
