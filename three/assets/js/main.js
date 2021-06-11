@@ -4,20 +4,8 @@ const navigation = {
   open: document.querySelector('.open'),
   close: document.querySelector('i.close')
 }
-/*===== CLICK BUTTON TO OPEN MENU =====*/
-/* Validate if button open exists */
-if (navigation.open) {
-  navigation.open.addEventListener('click', () => {
-    navigation.menu.classList.add('show-menu')
-  })
-}
-/*===== CLICK BUTTON TO CLOSE MENU =====*/
-/* Validate if button close exists */
-if (navigation.close) {
-  navigation.close.addEventListener('click', () => {
-    navigation.menu.classList.remove('show-menu')
-  })
-}
+/*===== CLICK BUTTON TO OPEN/CLOSE MENU =====*/
+
 /*===== CLICK MENU ITEM TO HIDE MENU  =====*/
 /* get all links: nav ul li a  */
 const links = document.querySelectorAll('nav ul li a')
@@ -30,12 +18,44 @@ function handleLinkClick() {
   navigation.menu.classList.remove('show-menu')
 }
 
-/*==================== SERVICES MODAL ====================*/
+/*==== ACTIVE MENU LINK AT CURRENT SECTION =====*/
+const sections = document.querySelectorAll('section[id]')
+const navHeight = 69
+window.addEventListener('scroll', activeMenuAtCurrentSection)
+function activeMenuAtCurrentSection() {
+  const scrollPosition = window.pageYOffset
 
-/*==================== TESTIMONIAL SWIPER  ====================*/
+  for (let section of sections) {
+    const sectionTop = section.offsetTop - navHeight
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
 
-/*==================== ACTIVE LINK AT CURRENT SECTION ====================*/
+    if (
+      scrollPosition > sectionTop &&
+      scrollPosition <= sectionTop + sectionHeight
+    ) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
+/*==== CHANGE HEADER AFTER SCROLL =====*/
+const header = document.querySelector('#header')
+window.addEventListener('scroll', changeHeaderAfterScroll)
+function changeHeaderAfterScroll() {
+  window.scrollY >= navHeight
+    ? header.classList.add('scroll')
+    : header.classList.remove('scroll')
+}
 
-/*==================== BACK TO TOP ====================*/
+/*==== SERVICES MODAL =====*/
+
+/*==== TESTIMONIAL SWIPER  =====*/
+
+/*==== BACK TO TOP =====*/
