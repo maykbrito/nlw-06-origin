@@ -66,6 +66,16 @@ function backToTop() {
 /*==== SERVICES MODAL =====*/
 
 /*==== TESTIMONIAL SWIPER  =====*/
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 2,
+  setWrapperSize: true,
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  mousewheel: true,
+  keyboard: true,
+  height: 700
+})
 
 /*==== ANIMATION SCROLLREVEAL   =====*/
 const scrollReveal = ScrollReveal({
@@ -76,8 +86,12 @@ const scrollReveal = ScrollReveal({
 })
 
 scrollReveal.reveal(
-  `.home .text, .home .image, 
-  .about header, .about .image, .about .text`,
+  `#home .text, #home .image, 
+  #about .image, #about .text,
+  #services header, #services .card,
+  #testimonial header, #testimonial .testimonials,
+  #contact .text, #contact .info, 
+  footer .brand, footer .social`,
   {
     interval: 100
   }

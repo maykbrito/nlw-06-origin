@@ -1,4 +1,5 @@
-* INÍCIO
+----------------------------------------------------------------
+* Início
 
 title
 Saúde natural para os seus cabelos
@@ -7,8 +8,11 @@ text
 Um salão exclusivo em São Paulo, especializado em tratamentos naturais.
 
 
+----------------------------------------------------------------
+* Sobre
 
-* Sobre nós
+title
+Sobre nós
 
 text
 Enquanto o mundo estava imerso na busca por soluções rápidas, Mercedes Dios 
@@ -18,9 +22,11 @@ Sempre incentivou que seus produtos e tratamentos fossem feitos à base de ervas
 
 Durante anos,  a filha Cris Dios estudou como lavar, pintar, recuperar os fios, deixando os cabelos saudáveis e brilhantes. Cris mergulhou de cabeça, investiu na sua formação, tornando-se  uma profissional completa de cabelos. Como empresária, aprendia a observar que existia uma ética pessoal na forma de se cuidar.
 
+----------------------------------------------------------------
 * SERVIÇOS
 
 title
+Serviços
 
 subtitle
 Com mais de 10 anos no mercado, o beautysalon já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais
@@ -33,3 +39,24 @@ A nossa equipe é repleta de profissionais renomados, famosos por lançarem tend
 
 > Tratamentos
 O beautysalon conta com diversos tratamentos naturais e totalmente veganos, para qualquer tipo de cabelo.
+
+----------------------------------------------------------------
+* DEPOIMENTOS
+
+title
+Depoimentos de quem já passou por aqui
+
+> Wanessa Souza
+Eu sou cliente do Beautysalon há 5 anos e não troco por nada! Certamente meu cabelo mudou muito depois que comecei a tratar somente com produtos naturais e veganos. São profissionais incríveis e qualificados.   
+
+> Luna falção
+Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.
+
+
+* CONTATO
+
+title
+Entre em contato com a gente!
+
+text
+Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.

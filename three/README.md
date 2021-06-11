@@ -35,6 +35,10 @@ Bibliotecas
 - [SwipeJS](https://github.com/nolimits4web/Swiper)
 - [Unicons](https://iconscout.com/unicons/)
 
+Utilitários
+
+- [randomuser.me](https://randomuser.me/photos)
+
 ## 💻 Projeto
 
 O **\_\_\_** é uma página no formato One Page, responsivo, e se encaixa para diversos tipos de negócio. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer
