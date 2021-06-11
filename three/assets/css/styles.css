@@ -18,6 +18,7 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 4.3125rem;
@@ -178,8 +179,14 @@ h3 {
 
 #header {
   display: flex;
-  height: var(--header-height);
   border-bottom: 1px solid #e4e4e4;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background: var(--body-color);
 }
 
 /*========= LOGO =========*/
@@ -201,6 +208,7 @@ nav.container {
   justify-content: space-between;
 
   width: 100%;
+  height: var(--header-height);
 }
 
 ul li a {
@@ -248,7 +256,7 @@ ul.grid {
 
 /*========= HOME =========*/
 .home {
-  height: calc(48rem - var(--header-height));
+  height: calc(48rem);
   overflow: hidden;
 }
 
