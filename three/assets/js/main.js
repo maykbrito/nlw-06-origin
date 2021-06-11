@@ -66,3 +66,19 @@ function backToTop() {
 /*==== SERVICES MODAL =====*/
 
 /*==== TESTIMONIAL SWIPER  =====*/
+
+/*==== ANIMATION SCROLLREVEAL   =====*/
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+  reset: true
+})
+
+scrollReveal.reveal(
+  `.home .text, .home .image, 
+  .about header, .about .image, .about .text`,
+  {
+    interval: 100
+  }
+)
