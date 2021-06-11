@@ -54,8 +54,15 @@ function changeHeaderAfterScroll() {
     : header.classList.remove('scroll')
 }
 
+/*==== BACK TO TOP =====*/
+const backToTopButton = document.querySelector('.back-to-top')
+window.addEventListener('scroll', backToTop)
+function backToTop() {
+  window.scrollY >= 560
+    ? backToTopButton.classList.add('show')
+    : backToTopButton.classList.remove('show')
+}
+
 /*==== SERVICES MODAL =====*/
 
 /*==== TESTIMONIAL SWIPER  =====*/
-
-/*==== BACK TO TOP =====*/

@@ -68,6 +68,7 @@ img {
   --m-3: 3rem;
 
   /*========== z index ==========*/
+  --z-top: 10;
   --z-fixed: 100;
   --z-modal: 1000;
 }
@@ -383,11 +384,40 @@ ul.grid {
 
 /*========= FOOTER =========*/
 
-/*========= SCROLL UP =========*/
+/*========= BACK TO TOP =========*/
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
 
-/* Show scroll */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-/*========= SCROLL BAR =========*/
+  padding: 0.3rem;
+  background: var(--base-color);
+
+  z-index: var(--z-top);
+  transition: 0.3s;
+
+  clip-path: circle();
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.back-to-top i {
+  font-size: var(--h1-font-size);
+  color: var(--body-color);
+}
+
+/* Show button */
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /*========= MEDIA QUERIES =========*/
 /* extra small devices: 600 <  */
