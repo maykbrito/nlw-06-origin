@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
 }
 ul {
   list-style: none;
@@ -35,7 +34,7 @@ img {
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(var(--hue) 60% 99%);
+  --body-color: hsl(0 0% 98%);
 
   /*========== Font & typography ==========*/
   --title-font: 'Poppins', sans-serif;
@@ -93,11 +92,13 @@ html {
 }
 
 body {
+  background-color: var(--body-color);
   margin: 0 0 var(--header-height) 0;
+
+  color: var(--text-color);
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
-  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
 }
 h1,
 h2,
@@ -105,11 +106,12 @@ h3 {
   color: var(--title-color);
   font-weight: var(--font-bold);
   letter-spacing: -2px;
+  -webkit-font-smoothing: auto;
 }
 
 /*========= REUSABLE CLASSES =========*/
 .section {
-  padding: 8rem 0;
+  padding: 10rem 0;
 }
 .section .title {
   font-size: var(--h1-font-size);
@@ -141,6 +143,16 @@ h3 {
     270deg,
     var(--base-color),
     hsl(var(--hue) 65% 88% / 0.34)
+  );
+}
+
+.divider-2 {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsl(var(--hue) 65% 88% / 0.34),
+    var(--base-color)
   );
 }
 
@@ -190,6 +202,7 @@ h3 {
   background: var(--body-color);
 }
 
+/* Change header on scroll */
 #header.scroll {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -228,6 +241,11 @@ ul li a {
   position: relative;
 }
 
+ul.grid {
+  grid-auto-flow: column;
+}
+
+/* Hover & Active link */
 ul li a:hover,
 ul li a.active {
   color: var(--base-color);
@@ -252,14 +270,7 @@ ul li a.active::before {
   width: 100%;
 }
 
-ul.grid {
-  grid-auto-flow: column;
-}
 /* show menu */
-
-/* Active link */
-
-/* Change background header */
 
 /*========= HOME =========*/
 .home {
@@ -326,6 +337,10 @@ ul.grid {
 }
 
 /*========= ABOUT =========*/
+.about {
+  background: white;
+}
+
 .about header {
   margin-bottom: 5.25rem;
 }
@@ -372,8 +387,33 @@ ul.grid {
 
 /*========= SERVICES =========*/
 .services {
-  min-height: 29.75rem;
-  background: var(--base-color-light);
+}
+
+.services .cards {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.services .card {
+  min-height: 22rem;
+  padding: 3rem;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  text-align: center;
+}
+
+.services .card svg path {
+  fill: var(--base-color);
+}
+
+.services .card .img {
+  margin-bottom: var(--m-1-5);
+}
+
+.services .card h3 {
+  font-size: var(--h2-font-size);
+  letter-spacing: 0px;
+  margin-bottom: var(--m-0-75);
 }
 
 /* Active Modal */

@@ -1,4 +1,4 @@
-* HOME
+* INÍCIO
 
 title
 Saúde natural para os seus cabelos
@@ -8,13 +8,7 @@ Um salão exclusivo em São Paulo, especializado em tratamentos naturais.
 
 
 
-* ABOUT
-
-title
-Sobre nós
-
-subtitle
-Com mais de 10 anos no mercado, o beautysalon já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais
+* Sobre nós
 
 text
 Enquanto o mundo estava imerso na busca por soluções rápidas, Mercedes Dios 
@@ -24,4 +18,18 @@ Sempre incentivou que seus produtos e tratamentos fossem feitos à base de ervas
 
 Durante anos,  a filha Cris Dios estudou como lavar, pintar, recuperar os fios, deixando os cabelos saudáveis e brilhantes. Cris mergulhou de cabeça, investiu na sua formação, tornando-se  uma profissional completa de cabelos. Como empresária, aprendia a observar que existia uma ética pessoal na forma de se cuidar.
 
+* SERVIÇOS
 
+title
+
+subtitle
+Com mais de 10 anos no mercado, o beautysalon já conquistou clientes de inúmeros países com seus tratamentos exclusivos e totalmente naturais
+
+> Terapia capilar
+Terapia completa para couro cabeludo e fios, protegendo todos os tipos de cabelos, inclusive os longos e finos.
+
+> Cortes
+A nossa equipe é repleta de profissionais renomados, famosos por lançarem tendências com cortes diferenciados e clássicos.
+
+> Tratamentos
+O beautysalon conta com diversos tratamentos naturais e totalmente veganos, para qualquer tipo de cabelo.
