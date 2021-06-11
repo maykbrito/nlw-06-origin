@@ -1,0 +1,391 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap');
+
+/*==================== RESET ====================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*==================== VARIABLES CSS ====================*/
+:root {
+  --header-height: 4.3125rem;
+
+  /*========== Colors ==========*/
+  /* Choose your prefered color */
+  --hue: 159; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --base-color-light: hsl(var(--hue) 25% 89%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(var(--hue) 60% 99%);
+
+  /*========== Font & typography ==========*/
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --h4-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*========== Margins ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --m-0-25: 0.25rem;
+  --m-0-5: 0.5rem;
+  --m-0-75: 0.75rem;
+  --m-1: 1rem;
+  --m-1-5: 1.5rem;
+  --m-2: 2rem;
+  --m-2-5: 1.5rem;
+  --m-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* large devices: 992 > */
+@media screen and (min-width: 992px) {
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --h4-font-size: 1.125rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*========= BASE =========*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  letter-spacing: -2px;
+}
+
+/*========= REUSABLE CLASSES =========*/
+.section {
+  padding: 8rem 0;
+}
+.section .title {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--m-0-75);
+}
+
+.section .subtitle {
+  font-size: var(--h4-font-size);
+  margin-bottom: var(--m-3);
+  font-weight: 400;
+}
+
+.section .title,
+.section .subtitle {
+  text-align: center;
+  max-width: 32.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section .subtitle strong {
+  color: var(--base-color);
+}
+
+.divider-1 {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    var(--base-color),
+    hsl(var(--hue) 65% 88% / 0.34)
+  );
+}
+
+/*========= BUTTONS =========*/
+.button {
+  color: var(--text-color-light);
+  background: var(--base-color);
+  height: 3.125rem;
+
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+
+  padding: 0 2rem;
+
+  border-radius: 0.25rem;
+  transition: background 0.3s;
+
+  font-weight: var(--font-medium);
+}
+
+.button:hover {
+  background: var(--base-color-alt);
+}
+
+/*========= LAYOUT =========*/
+.container {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+#header {
+  display: flex;
+  height: var(--header-height);
+  border-bottom: 1px solid #e4e4e4;
+}
+
+/*========= LOGO =========*/
+.logo {
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  font-family: var(--title-font);
+}
+
+.logo span {
+  color: var(--base-color);
+}
+
+/*========= NAV =========*/
+nav.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+
+  color: var(--title-color);
+  height: var(--header-height);
+
+  transition: color 0.3s;
+
+  position: relative;
+}
+
+ul li a:hover {
+  color: var(--base-color);
+}
+
+ul li a::before {
+  content: '';
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+  background: var(--base-color);
+
+  transition: 0.3s;
+}
+
+ul li a:hover::before {
+  width: 100%;
+}
+
+ul.grid {
+  grid-auto-flow: column;
+}
+/* show menu */
+
+/* Active link */
+
+/* Change background header */
+
+/*========= HOME =========*/
+.home {
+  height: calc(48rem - var(--header-height));
+  overflow: hidden;
+}
+
+.home .container {
+  display: flex;
+  align-items: center;
+  gap: 7.375rem;
+  height: 100%;
+
+  position: relative;
+}
+
+.home .text {
+  max-width: 24.75rem;
+}
+
+.home .text h1 {
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--m-0-75);
+}
+
+.home .text p {
+  margin-bottom: var(--m-1-5);
+}
+
+.home .image {
+  width: 561px;
+  height: 375px;
+  background: lightgrey;
+
+  position: relative;
+}
+
+.home .image::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-image: url(https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.25rem;
+}
+
+.home .image::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: -4.25rem;
+  left: 4.875rem;
+
+  background: var(--base-color-second);
+  border-radius: 0.25rem;
+}
+
+/*========= ABOUT =========*/
+.about header {
+  margin-bottom: 5.25rem;
+}
+
+.about .content {
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.about .image {
+  width: 571px;
+  height: 412px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.about .image::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  left: -12rem;
+
+  width: 571px;
+  height: 412px;
+
+  background: var(--base-color-second);
+}
+
+.about .image::after {
+  content: '';
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 571px;
+  height: 412px;
+
+  background-image: url(https://images.unsplash.com/photo-1559599101-f09722fb4948?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+
+/*========= SERVICES =========*/
+.services {
+  min-height: 29.75rem;
+  background: var(--base-color-light);
+}
+
+/* Active Modal */
+
+/*========= TESTIMONIAL =========*/
+
+/*========= CONTACT =========*/
+
+/*========= FOOTER =========*/
+
+/*========= SCROLL UP =========*/
+
+/* Show scroll */
+
+/*========= SCROLL BAR =========*/
+
+/*========= MEDIA QUERIES =========*/
+/* extra small devices: 600 <  */
+
+/* small devices: 767 < */
+
+/* medium devices: 992 < */
+
+/* large devices: 1200 < */
+@media (max-width: 1200px) {
+  .container {
+    margin-left: var(--m-1-5);
+    margin-right: var(--m-1-5);
+  }
+}
