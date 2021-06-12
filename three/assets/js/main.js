@@ -23,17 +23,17 @@ const sections = document.querySelectorAll('section[id]')
 const navHeight = 69
 window.addEventListener('scroll', activeMenuAtCurrentSection)
 function activeMenuAtCurrentSection() {
-  const scrollPosition = window.pageYOffset
+  const pageYOffset = window.pageYOffset
 
   for (let section of sections) {
     const sectionTop = section.offsetTop - navHeight
     const sectionHeight = section.offsetHeight
     const sectionId = section.getAttribute('id')
 
-    if (
-      scrollPosition > sectionTop &&
-      scrollPosition <= sectionTop + sectionHeight
-    ) {
+    const reachStartOfSection = pageYOffset > sectionTop
+    const reachEndOfSection = pageYOffset <= sectionTop + sectionHeight
+
+    if (reachStartOfSection && reachEndOfSection) {
       document
         .querySelector('nav ul li a[href*=' + sectionId + ']')
         .classList.add('active')
