@@ -67,14 +67,19 @@ function backToTop() {
 
 /*==== TESTIMONIAL SWIPER  =====*/
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 2,
-  setWrapperSize: true,
+  slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination'
   },
   mousewheel: true,
   keyboard: true,
-  height: 700
+  breakpoints: {
+    // when window width is >= 767px
+    767: {
+      slidesPerView: 2,
+      setWrapperSize: true
+    }
+  }
 })
 
 /*==== ANIMATION SCROLLREVEAL   =====*/
