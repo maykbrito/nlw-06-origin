@@ -4,7 +4,7 @@
     <!--===== PAGE INFO ======-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Origin Six</title>
+    <title>OriginSix</title>
 
     <!--===== LINKS ======-->
     <!-- icons -->
@@ -63,9 +63,16 @@
 
     <!--===== main ======-->
     <main>
-      <!-- section.home.section#home -->
-      <section class="home section" id="home">
+      <!-- section.section#home>.container.grid -->
+      <section class="section" id="home">
         <div class="container grid">
+          <!-- (.image>img)+.text>h1.title+p+a.button.primary -->
+          <div class="image">
+            <img
+              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
+              alt=""
+            />
+          </div>
           <div class="text">
             <h1 class="title">Saúde natural para os seus cabelos</h1>
             <p>
@@ -74,19 +81,14 @@
             </p>
             <a href="#contact" class="button primary">Agendar um horário</a>
           </div>
-          <div class="image">
-            <img
-              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFpcmRyZXNzZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-              alt=""
-            />
-          </div>
         </div>
       </section>
 
+      <!-- .divider-1 -->
       <div class="divider-1"></div>
 
-      <!-- section.about.section#about -->
-      <section class="about section" id="about">
+      <!-- section.section#about>.container.grid -->
+      <section class="section" id="about">
         <div class="container grid">
           <div class="image">
             <img
@@ -123,8 +125,8 @@
 
       <div class="divider-2"></div>
 
-      <!-- section.services.section#services-->
-      <section class="services section" id="services">
+      <!-- section.section#services-->
+      <section class="section" id="services">
         <div class="container">
           <header class="center">
             <h2 class="title">Serviços</h2>
@@ -165,8 +167,8 @@
       </section>
 
       <div class="divider-1"></div>
-      <!-- section.testimonial.section#testimonial -->
-      <section class="testimonial section" id="testimonial">
+      <!-- section.section#testimonial -->
+      <section class="section" id="testimonial">
         <div class="container">
           <header class="center">
             <h2 class="title">Depoimentos de quem já passou por aqui</h2>
@@ -233,8 +235,8 @@
 
       <div class="divider-2"></div>
 
-      <!-- section.contact.section#contact -->
-      <section class="contact section" id="contact">
+      <!-- section.section#contact -->
+      <section class="section" id="contact">
         <div class="container grid">
           <div class="text">
             <h2 class="title">Entre em contato com a gente!</h2>
@@ -291,13 +293,13 @@
     <a href="#home" class="back-to-top"><i class="osix-arrow-up"></i></a>
 
     <!--==== JAVASCRIPT =====-->
-    <!-- swiper.js: https://swiperjs.com/-->
+    <!-- script[src="https://unpkg.com/swiper/swiper-bundle.min.js"] -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <!-- scrollreveal.js: https://scrollrevealjs.org/-->
+    <!-- script[src="https://unpkg.com/scrollreveal"] -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- main.js-->
+    <!-- script[src="assets/js/main.js"] -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

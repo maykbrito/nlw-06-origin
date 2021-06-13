@@ -62,7 +62,7 @@ activeMenuAtCurrentSection()
 /*==== CHANGE HEADER AFTER SCROLL =====*/
 function changeHeaderAfterScroll() {
   const header = document.querySelector('#header')
-  const navHeight = document.querySelector('#header').offsetHeight
+  const navHeight = header.offsetHeight
 
   window.addEventListener('scroll', () => {
     window.scrollY >= navHeight
