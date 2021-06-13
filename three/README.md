@@ -29,6 +29,7 @@ Bibliotecas
 
 - [Google Fonts](https://fonts.google.com/)
 - [SwipeJS](https://github.com/nolimits4web/Swiper)
+- [ScrollRevel](https://scrollrevealjs.org)
 
 Utilitários
 
