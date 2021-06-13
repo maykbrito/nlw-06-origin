@@ -52,7 +52,7 @@ Eu sou cliente do Beautysalon há 5 anos e não troco por nada! Certamente meu c
 > Luna falção
 Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.
 
-
+----------------------------------------------------------------
 * CONTATO
 
 title
@@ -60,3 +60,10 @@ Entre em contato com a gente!
 
 text
 Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir suas críticas e sugestões.
+
+* 11 99845-6754
+* R. Amauri Souza, 346
+* contato@beautysalon.com
+
+©2021 Beautysalon.
+Todos os direitos reservados.

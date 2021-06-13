@@ -1,103 +1,128 @@
-/*==================== MENU ACTIONS ====================*/
 const navigation = {
-  menu: document.querySelector('.menu'),
-  open: document.querySelector('.open'),
+  nav: document.querySelector('header nav'),
+  toggle: document.querySelectorAll('nav .toggle'),
   close: document.querySelector('i.close')
 }
+
 /*===== CLICK BUTTON TO OPEN/CLOSE MENU =====*/
+function toggleMenu(toggle, nav) {
+  if (toggle && nav) {
+    for (element of toggle) {
+      element.addEventListener('click', () => {
+        nav.classList.toggle('show')
+      })
+    }
+  }
+}
+toggleMenu(navigation.toggle, navigation.nav)
 
 /*===== CLICK MENU ITEM TO HIDE MENU  =====*/
-/* get all links: nav ul li a  */
-const links = document.querySelectorAll('nav ul li a')
-/* for each link, add click event */
-for (let link of links) {
-  link.addEventListener('click', handleLinkClick)
+function hideMenuItemOnClick() {
+  /* get all links: nav ul li a  */
+  const links = document.querySelectorAll('nav ul li a')
+  /* for each link, add click event */
+  for (let link of links) {
+    link.addEventListener('click', () => {
+      /* when click, remove show class from navigation.nav */
+      navigation.nav.classList.remove('show')
+    })
+  }
 }
-/* when click, remove show-menu class from navigation.menu */
-function handleLinkClick() {
-  navigation.menu.classList.remove('show-menu')
-}
+hideMenuItemOnClick()
 
 /*==== ACTIVE MENU LINK AT CURRENT SECTION =====*/
-const sections = document.querySelectorAll('section[id]')
-const navHeight = 69
-window.addEventListener('scroll', activeMenuAtCurrentSection)
 function activeMenuAtCurrentSection() {
-  const pageYOffset = window.pageYOffset
+  const sections = document.querySelectorAll('section[id]')
 
-  for (let section of sections) {
-    const sectionTop = section.offsetTop - navHeight
-    const sectionHeight = section.offsetHeight
-    const sectionId = section.getAttribute('id')
+  window.addEventListener('scroll', () => {
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
 
-    const reachStartOfSection = pageYOffset > sectionTop
-    const reachEndOfSection = pageYOffset <= sectionTop + sectionHeight
+    for (let section of sections) {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const sectionId = section.getAttribute('id')
 
-    if (reachStartOfSection && reachEndOfSection) {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.add('active')
-    } else {
-      document
-        .querySelector('nav ul li a[href*=' + sectionId + ']')
-        .classList.remove('active')
+      const checkpointStart = checkpoint >= sectionTop
+      const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+      if (checkpointStart && checkpointEnd) {
+        document
+          .querySelector('nav ul li a[href*=' + sectionId + ']')
+          .classList.add('active')
+      } else {
+        document
+          .querySelector('nav ul li a[href*=' + sectionId + ']')
+          .classList.remove('active')
+      }
     }
-  }
+  })
 }
+activeMenuAtCurrentSection()
 
 /*==== CHANGE HEADER AFTER SCROLL =====*/
-const header = document.querySelector('#header')
-window.addEventListener('scroll', changeHeaderAfterScroll)
 function changeHeaderAfterScroll() {
-  window.scrollY >= navHeight
-    ? header.classList.add('scroll')
-    : header.classList.remove('scroll')
+  const header = document.querySelector('#header')
+  const navHeight = document.querySelector('#header').offsetHeight
+
+  window.addEventListener('scroll', () => {
+    window.scrollY >= navHeight
+      ? header.classList.add('scroll')
+      : header.classList.remove('scroll')
+  })
 }
+changeHeaderAfterScroll()
 
 /*==== BACK TO TOP =====*/
-const backToTopButton = document.querySelector('.back-to-top')
-window.addEventListener('scroll', backToTop)
 function backToTop() {
-  window.scrollY >= 560
-    ? backToTopButton.classList.add('show')
-    : backToTopButton.classList.remove('show')
-}
+  const button = document.querySelector('.back-to-top')
 
-/*==== SERVICES MODAL =====*/
+  window.addEventListener('scroll', () => {
+    window.scrollY >= 560
+      ? button.classList.add('show')
+      : button.classList.remove('show')
+  })
+}
+backToTop()
 
 /*==== TESTIMONIAL SWIPER  =====*/
-const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  mousewheel: true,
-  keyboard: true,
-  breakpoints: {
-    // when window width is >= 767px
-    767: {
-      slidesPerView: 2,
-      setWrapperSize: true
+function testimonialSwiper() {
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+    breakpoints: {
+      // when window width is >= 767px
+      767: {
+        slidesPerView: 2,
+        setWrapperSize: true
+      }
     }
-  }
-})
+  })
+}
+testimonialSwiper()
 
 /*==== ANIMATION SCROLLREVEAL   =====*/
-const scrollReveal = ScrollReveal({
-  origin: 'top',
-  distance: '30px',
-  duration: 700,
-  reset: true
-})
+function animationScrollReveal() {
+  const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+  })
 
-scrollReveal.reveal(
-  `#home .text, #home .image, 
-  #about .image, #about .text,
-  #services header, #services .card,
-  #testimonial header, #testimonial .testimonials,
-  #contact .text, #contact .info, 
-  footer .brand, footer .social`,
-  {
-    interval: 100
-  }
-)
+  scrollReveal.reveal(
+    `#home .text, #home .image, 
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonial header, #testimonial .testimonials,
+    #contact .text, #contact .info, 
+    footer .brand, footer .social`,
+    {
+      interval: 100
+    }
+  )
+}
+animationScrollReveal()

@@ -1,7 +1,3 @@
-<h1 align="center">
-  <img alt="JobsCalc" title="JobsCalc" src="https://i.imgur.com/Veqm7Gh.png" width="220px" />
-</h1>
-
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -18,7 +14,7 @@
 <br>
 
 <p align="center">
-  <img alt="dev.finances" src=".github/preview.png" width="100%">
+  <img alt="OriginSix" src=".github/preview.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -33,19 +29,19 @@ Bibliotecas
 
 - [Google Fonts](https://fonts.google.com/)
 - [SwipeJS](https://github.com/nolimits4web/Swiper)
-- [Unicons](https://iconscout.com/unicons/)
 
 Utilitários
 
 - [randomuser.me](https://randomuser.me/photos)
+- [IconMoon](https://icomoon.io/app/#/select)
 
 ## 💻 Projeto
 
-O **\_\_\_** é uma página no formato One Page, responsivo, e se encaixa para diversos tipos de negócio. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer
+OriginSix é uma página no formato One Page, responsivo, e se encaixa para diversos tipos de negócio. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/s4fytPFbDiSkv4GPSfKaLE/Jobs-Planning). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/YJ21RnZoelU6tthwExzMVP/Origin-Six). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ## 📝 Licença
 
