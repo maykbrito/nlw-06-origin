@@ -94,10 +94,11 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: var(--title-color);
   font-weight: var(--font-bold);
-  letter-spacing: -1px;
+  font-family: var(--title-font);
   -webkit-font-smoothing: auto;
 }
 
@@ -186,6 +187,7 @@ main {
 .section .title {
   font-size: var(--title-font-size);
   margin-bottom: var(--m-0-75);
+  font-family: var(--title-font);
 }
 
 .section .subtitle {
@@ -643,11 +645,6 @@ footer .social a i {
 /*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
-  h1,
-  h2 {
-    letter-spacing: -2px;
-  }
-
   .section {
     padding: 10rem 0;
   }
