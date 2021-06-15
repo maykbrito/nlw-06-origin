@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'origin-six';
+  src:  url('fonts/origin-six.eot?av9jdh');
+  src:  url('fonts/origin-six.eot?av9jdh#iefix') format('embedded-opentype'),
+    url('fonts/origin-six.ttf?av9jdh') format('truetype'),
+    url('fonts/origin-six.woff?av9jdh') format('woff'),
+    url('fonts/origin-six.svg?av9jdh#origin-six') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="osix-"], [class*=" osix-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'origin-six' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.osix-cosmetic:before {
+  content: "\e900";
+}
+.osix-trim:before {
+  content: "\e901";
+}
+.osix-woman-hair:before {
+  content: "\e902";
+}
+.osix-whatsapp:before {
+  content: "\e903";
+}
+.osix-arrow-up:before {
+  content: "\e90c";
+}
+.osix-close:before {
+  content: "\e90a";
+}
+.osix-menu:before {
+  content: "\e90b";
+}
+.osix-youtube:before {
+  content: "\e904";
+}
+.osix-mail:before {
+  content: "\e905";
+}
+.osix-map-pin:before {
+  content: "\e906";
+}
+.osix-instagram:before {
+  content: "\e907";
+}
+.osix-facebook:before {
+  content: "\e908";
+}
+.osix-phone:before {
+  content: "\e909";
+}
