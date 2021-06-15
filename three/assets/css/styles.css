@@ -196,6 +196,10 @@ main {
   color: var(--base-color);
 }
 
+.logo-alt span {
+  color: var(--body-color);
+}
+
 /* Menu Navigation */
 nav.container {
   display: flex;
@@ -537,4 +541,84 @@ nav i.osix-close {
   font-size: 1.5rem;
   margin-right: var(--m-1-5);
   color: var(--base-color);
+}
+
+/*========= FOOTER =========*/
+footer {
+  background: var(--base-color);
+  min-height: 16.45rem;
+}
+
+footer .container {
+  padding-top: 3.75rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+footer .brand {
+  color: var(--body-color);
+}
+
+footer .brand a.logo {
+  display: inline-block;
+  margin-bottom: var(--m-1-5);
+}
+
+footer .brand p {
+  margin-bottom: var(--m-0-75);
+}
+
+footer .social {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+footer .social a {
+  transition: 0.3s;
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+footer .social a i {
+  font-size: 1.5rem;
+  color: var(--body-color);
+}
+
+/*========= BACK TO TOP =========*/
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.3rem;
+  background: var(--base-color);
+
+  z-index: var(--z-top);
+  transition: 0.3s;
+
+  clip-path: circle();
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.back-to-top i {
+  font-size: var(--title-font-size);
+  color: var(--body-color);
+}
+
+/* Show  */
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }

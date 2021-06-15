@@ -77,10 +77,53 @@ function animationScrollReveal() {
     #about .image, #about .text,
     #services header, #services .card,
     #testimonial header, #testimonial .testimonials,
-    #contact .text, #contact .info`,
+    #contact .text, #contact .info, 
+    footer .brand, footer .social`,
     {
       interval: 100
     }
   )
 }
 animationScrollReveal()
+
+/*==== BACK TO TOP =====*/
+function backToTop() {
+  const button = document.querySelector('.back-to-top')
+
+  window.addEventListener('scroll', () => {
+    window.scrollY >= 560
+      ? button.classList.add('show')
+      : button.classList.remove('show')
+  })
+}
+backToTop()
+
+
+/*==== ACTIVE MENU LINK AT CURRENT SECTION =====*/
+function activeMenuAtCurrentSection() {
+  const sections = document.querySelectorAll('section[id]')
+
+  window.addEventListener('scroll', () => {
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+    for (let section of sections) {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const sectionId = section.getAttribute('id')
+
+      const checkpointStart = checkpoint >= sectionTop
+      const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+      if (checkpointStart && checkpointEnd) {
+        document
+          .querySelector('nav ul li a[href*=' + sectionId + ']')
+          .classList.add('active')
+      } else {
+        document
+          .querySelector('nav ul li a[href*=' + sectionId + ']')
+          .classList.remove('active')
+      }
+    }
+  })
+}
+activeMenuAtCurrentSection()
