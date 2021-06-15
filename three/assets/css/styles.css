@@ -622,3 +622,129 @@ footer .social a i {
   opacity: 1;
   transform: translateY(0);
 }
+
+/*========= MEDIA QUERIES =========*/
+/* extra large devices: 1200 > */
+@media (min-width: 1200px) {
+  .section {
+    padding: 10rem 0;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section header.center {
+    text-align: center;
+    max-width: 32.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  nav .hamburger {
+    display: none;
+  }
+
+  nav .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+  nav .menu ul {
+    display: grid;
+  }
+
+  /* home */
+  #home {
+    min-height: 48rem;
+  }
+
+  #home .container {
+    grid-auto-flow: column;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+  }
+
+  #home .text {
+    text-align: initial;
+    margin: 0;
+    max-width: 24.75rem;
+  }
+
+  #home .image {
+    margin-top: initial;
+    order: 1;
+  }
+
+  /* about */
+  #about .container {
+    grid-auto-flow: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  #about .image {
+    position: relative;
+    left: -2.5rem;
+  }
+
+  /* services */
+  #services .cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* testimonial */
+  #testimonial .container,
+  #testimonial header {
+    margin: auto;
+  }
+
+  #testimonial blockquote {
+    padding: 3.25rem;
+  }
+
+  #testimonial blockquote p > span {
+    top: 4.5rem;
+    left: 1.5rem;
+  }
+
+  /* contact */
+  #contact .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 16.75rem;
+  }
+
+  #contact .title {
+    margin-bottom: var(--m-0-75);
+  }
+
+  #contact .text p {
+    margin-bottom: var(--m-1-5);
+  }
+
+  /* footer */
+  footer .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer .social {
+    justify-content: flex-end;
+  }
+}
+
+/* large devices: 1023 > */
+/* large devices: 992 > */
+@media screen and (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.5rem;
+    --subtitle-font-size-small: 1.125rem;
+    --normal-font-size: 1rem;
+    --card-padding: 3rem;
+  }
+}
+
+/* medium devices: 767 > */
