@@ -427,3 +427,114 @@ nav i.osix-close {
   letter-spacing: 0px;
   margin-bottom: var(--m-0-75);
 }
+
+/*========= TESTIMONIAL =========*/
+#testimonial {
+  background: white;
+}
+
+#testimonial .container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonial header {
+  margin-left: var(--m-1-5);
+  margin-right: var(--m-1-5);
+  /* swiper need internal padding so, remove this*/
+  margin-bottom: 0;
+}
+
+#testimonial blockquote {
+  padding: 1.25rem;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#testimonial blockquote p {
+  text-indent: 30px;
+}
+
+#testimonial blockquote p > span {
+  font-family: serif;
+  font-size: 3rem;
+  line-height: 0;
+  position: absolute;
+  top: 2.5rem;
+  left: -0.5rem;
+
+  color: var(--base-color);
+}
+
+#testimonial blockquote cite {
+  margin-top: var(--m-1-5);
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-style: normal;
+}
+
+#testimonial blockquote cite img {
+  clip-path: circle();
+  width: 2rem;
+  margin-right: .5rem;
+}
+
+/* swiper */
+.swiper-slide {
+  height: auto;
+  /* need 1rem for internal padding, 
+  but, add layout .section header padding here */
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+/*========= CONTACT =========*/
+#contact .container {
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .title {
+  margin-bottom: var(--m-1);
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+
+#contact .button i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+#contact .info {
+  justify-content: space-between;
+}
+
+#contact .info > div {
+  display: flex;
+  align-items: center;
+}
+
+#contact .info i {
+  font-size: 1.5rem;
+  margin-right: var(--m-1-5);
+  color: var(--base-color);
+}

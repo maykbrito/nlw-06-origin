@@ -42,3 +42,45 @@ function changeHeaderAfterScroll() {
   })
 }
 changeHeaderAfterScroll()
+
+/*==== TESTIMONIAL SWIPER  =====*/
+function testimonialSwiper() {
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+    breakpoints: {
+      // when window width is >= 767px
+      767: {
+        slidesPerView: 2,
+        setWrapperSize: true
+      }
+    }
+  })
+}
+testimonialSwiper()
+
+/*==== ANIMATION SCROLLREVEAL   =====*/
+function animationScrollReveal() {
+  const scrollReveal = ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+    reset: true
+  })
+
+  scrollReveal.reveal(
+    `#home .text, #home .image, 
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonial header, #testimonial .testimonials,
+    #contact .text, #contact .info`,
+    {
+      interval: 100
+    }
+  )
+}
+animationScrollReveal()
