@@ -42,6 +42,7 @@ img {
   /* .5rem = 8px, 1rem = 16px */
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1.5rem;
+  --subtitle-font-size-small: 1rem;
   --normal-font-size: 0.938rem;
 
   /*========== Font weight ==========*/
@@ -53,6 +54,10 @@ img {
   --m-0-75: 0.75rem;
   --m-1: 1rem;
   --m-1-5: 1.5rem;
+  --m-4: 4rem;
+
+  /*========== Padding ==========*/
+  --card-padding: 2rem;
 
   /*========== z index ==========*/
   --z-fixed: 100;
@@ -164,6 +169,19 @@ main {
   font-size: var(--title-font-size);
   margin-bottom: var(--m-0-75);
   font-family: var(--title-font);
+}
+
+.section .subtitle {
+  font-size: var(--subtitle-font-size-small);
+  font-weight: 400;
+}
+
+.section .subtitle strong {
+  color: var(--base-color);
+}
+
+.section header {
+  margin-bottom: var(--m-4);
 }
 
 /* Logo */
@@ -380,4 +398,32 @@ nav i.osix-close {
 #about .text {
   margin-left: var(--m-1-5);
   margin-right: var(--m-1-5);
+}
+
+/*========= SERVICES =========*/
+#services .cards {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#services .card {
+  min-height: 22rem;
+  padding: var(--card-padding);
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  text-align: center;
+}
+
+#services i {
+  font-size: 5rem;
+  color: var(--base-color);
+
+  display: inline-block;
+  margin-bottom: var(--m-1-5);
+}
+
+#services .card h3 {
+  font-size: var(--subtitle-font-size);
+  letter-spacing: 0px;
+  margin-bottom: var(--m-0-75);
 }
